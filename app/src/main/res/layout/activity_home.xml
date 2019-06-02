@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mybackground"
+    android:orientation="vertical"
+    tools:context=".View.HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="2">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Diviertete"
+            android:textStyle="bold|italic"
+            android:textSize="70dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+    <Button
+        android:id="@+id/btn_juega"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Juega"
+        style="@style/MyButtonStyle"/>
+
+    <Button
+        android:id="@+id/btn_ranking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ranking"
+        style="@style/MyButtonStyle" />
+
+    <Button
+        android:id="@+id/btn_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Informacion"
+        style="@style/MyButtonStyle" />
+    </LinearLayout>
+
+</LinearLayout>

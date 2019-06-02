@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Adivina las palabras</string>
+    <string name="Adivina_las_palabras">Adivina las palabras</string>
+    <string name="Diviertete">Juega y diviertete!</string>
+    <string name="title_activity_fase">FaseActivity</string>
+    <string name="time_out_good">Se acabo el tiempo, pero el nivel fue superado</string>
+    <string name="time_out_bad">Se acabo el tiempo, intentalo otra vez!!!</string>
+    <string name="nivel_completado">Felicidades, nivel completado!!!</string>
+    <string name="nivel_no_completado">Vuelve a intentarlo, nivel no superado!!</string>
+</resources><!-- Guess_the_words -->
