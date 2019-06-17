@@ -1,8 +1,8 @@
 CREATE TABLE 'Nivel' ('numero_nivel'	INTEGER NOT NULL,'tot_preguntas'	INTEGER,'limite_preguntas'	INTEGER,PRIMARY KEY('numero_nivel'));
-CREATE TABLE 'Pregunta' ('numero_pregunta'	INTEGER NOT NULL,'numero_nivel'	INTEGER NOT NULL,'contenido_pregunta'	TEXT,'opcion1'	TEXT,'opcion2'	TEXT,'opcion3'	TEXT,'opcion4'	TEXT,'respuesta'	TEXT,PRIMARY KEY('numero_nivel','numero_pregunta'));
+CREATE TABLE 'Pregunta' ('numero_pregunta'	INTEGER NOT NULL,'numero_nivel'	INTEGER NOT NULL,'contenido_pregunta'	TEXT,'opcion1'	TEXT,'opcion2'	TEXT,'opcion3'	TEXT,'opcion4'	TEXT,'respuesta'	TEXT,PRIMARY KEY('numero_nivel','numero_pregunta'),FOREIGN KEY('numero_nivel') REFERENCES 'Nivel'(numero_nivel));
 CREATE TABLE 'Usuario' ('codigo_usuario'	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,'nombres'	TEXT,'apellidos'	TEXT,'correo'	TEXT,'password'	TEXT,'sexo'	TEXT);
-CREATE TABLE 'Compite' ('codigo_usuario'	INTEGER NOT NULL,'numero_nivel'	INTEGER NOT NULL,'estado_candado'	INTEGER,'preguntas_resueltas'	INTEGER,'my_timer'	INTEGER,PRIMARY KEY('codigo_usuario','numero_nivel'));
-CREATE TABLE 'Top' ('numero_nivel'	INTEGER NOT NULL,'codigo_usuario'	INTEGER,'my_timer'	INTEGER,'preguntas_resueltas' INTEGER);
+CREATE TABLE 'Compite' ('codigo_usuario'	INTEGER NOT NULL,'numero_nivel'	INTEGER NOT NULL,'estado_candado'	INTEGER,'preguntas_resueltas'	INTEGER,'my_timer'	INTEGER,PRIMARY KEY('codigo_usuario','numero_nivel'),FOREIGN KEY('numero_nivel') REFERENCES 'Nivel'('numero_nivel'),FOREIGN KEY('codigo_usuario') REFERENCES 'Usuario'('codigo_usuario'));
+CREATE TABLE 'Top' ('numero_nivel'	INTEGER NOT NULL,'codigo_usuario'	INTEGER,'my_timer'	INTEGER,'preguntas_resueltas' INTEGER,PRIMARY KEY('numero_nivel','codigo_usuario'),FOREIGN KEY('numero_nivel') REFERENCES 'Nivel'('numero_nivel'),FOREIGN KEY('codigo_usuario') REFERENCES 'Usuario'('codigo_usuario'));
 INSERT INTO 'Nivel' ('numero_nivel','tot_preguntas','limite_preguntas') VALUES (1,3,2);
 INSERT INTO 'Nivel' ('numero_nivel','tot_preguntas','limite_preguntas') VALUES (2,5,4);
 INSERT INTO 'Nivel' ('numero_nivel','tot_preguntas','limite_preguntas') VALUES (3,7,6);
